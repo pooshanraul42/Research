@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mechanical Design Portfolio | Clarifier Design and anaylsis</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+
+  <!-- Android and PWA -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <i class="bi bi-gear-wide"></i>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+ <main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title">
+    <div class="title-wrapper text-center">
+      <h1>Clarifier Walkway Design for Wastewater Treatment Plant</h1>
+      <p>Structural design and FEA validation of a clarifier walkway bridge.</p>
+    </div>
+  </div>
+
+  <!-- Portfolio Details Section -->
+  <section id="portfolio-details" class="portfolio-details section">
+    <div class="container" data-aos="fade-up">
+
+      <!-- Intro -->
+      <div class="row mb-5">
+        <div class="col-lg-12">
+          <p class="fs-5">
+            This project involved the structural design, finite element analysis, and installation planning of a clarifier scraper bridge for a wastewater treatment plant. The 11-meter truss was engineered to support up to 1000 kg, accounting for the gearbox, drive pipe, scraper arm, and maintenance loads. Key objectives included lightweight design, bolt-together assembly for transport, and structural integrity under service conditions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Clarifier Assembly -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/CAD/walkway.png" class="img-fluid rounded shadow-sm mb-3" alt="Clarifier Assembly">
+        </div>
+        <div class="col-md-6">
+          <h4>Clarifier Walkway Assembly</h4>
+          <p>The structure was built using 50×50×5 mm L-angle trusses and designed in SolidWorks with trim-extended joints.</p>
+          <ul>
+            <li>Split into two segments using bolted joints for transport and on-site assembly</li>
+            <li>Diagonal and horizontal bracing added to reduce torsional deformation</li>
+            <li>Mounting features modeled for gearbox, scraper pipe</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Civil Integration -->
+      <div class="row align-items-center flex-md-row-reverse mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/CAD/civil_assembly.png" class="img-fluid rounded shadow-sm mb-3" alt="Civil Tank Integration">
+        </div>
+        <div class="col-md-6">
+          <h4>Integration with Civil Infrastructure</h4>
+          <p>The truss was designed within a cylindrical concrete tank envelope to ensure proper fit and clearance.</p>
+          <ul>
+            <li>Anchoring plates aligned to match feedwell and top concrete rim</li>
+            <li>Scraper shaft and couplings referenced per site layout</li>
+            <li>Cross-checked against P&ID and plant layout drawings</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mesh Setup -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/FEA/mesh.png" class="img-fluid rounded shadow-sm mb-3" alt="Mesh Setup">
+        </div>
+        <div class="col-md-6">
+          <h4>Mesh & Boundary Setup</h4>
+          <p>Finite element modeling was performed in ANSYS Mechanical using structured hex elements.</p>
+          <ul>
+            <li>Shell and beam elements used to balance fidelity and solve time</li>
+            <li>Mesh refinement applied at bolt holes, load-bearing brackets, and gusseted corners</li>
+            <li>Mesh metrics like aspect ratio, skewness, and warping were checked</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Load Cases -->
+      <div class="row align-items-center flex-md-row-reverse mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/FEA/load.png" class="img-fluid rounded shadow-sm mb-3" alt="Load Setup">
+        </div>
+        <div class="col-md-6">
+          <h4>Load Case</h4>
+          <p>The truss was analyzed for a conservative 1000 kg load to account for motor torque and scraper resistance.</p>
+          <ul>
+            <li>1000 kg point load applied at gearbox location (center span)</li>
+            <li>Self-weight, equipment mass, and maintenance live load included</li>
+            <li>Boundary conditions: gravity + fixed supports at anchor plates</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stress Results -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/FEA/eqstress.png" class="img-fluid rounded shadow-sm mb-3" alt="Stress Results">
+        </div>
+        <div class="col-md-6">
+          <h4>Stress Analysis</h4>
+          <p>Stress concentrations were examined to ensure structural safety across all load paths.</p>
+          <ul>
+            <li>Peak Von Mises stress: ~153 MPa near bolt cutouts and joint overlaps</li>
+            <li>Stresses remained well below the steel yield strength (250 MPa)</li>
+            <li>Stress mitigated using bracing plates and filleted welds</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Deformation -->
+      <div class="row align-items-center flex-md-row-reverse mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/FEA/def.png" class="img-fluid rounded shadow-sm mb-3" alt="Deformation Result">
+        </div>
+        <div class="col-md-6">
+          <h4>Deflection Check</h4>
+          <p>The deformation was plotted and compared against deflection limits for walkable structures.</p>
+          <ul>
+            <li>Max vertical deflection: ~5 mm (L/220 approx.)</li>
+            <li>Within the L/250 limit for platforms under static loads</li>
+            <li>Deflection uniform along mid-span with no torsional twist</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Factor of Safety -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/FEA/fos.png" class="img-fluid rounded shadow-sm mb-3" alt="Factor of Safety">
+        </div>
+        <div class="col-md-6">
+          <h4>Factor of Safety</h4>
+          <ul>
+            <li>Minimum FOS > 2.3 under worst-case loading</li>
+            <li>FOS validated at all bolted junctions and load paths</li>
+            <li>Redundant structure supports future load variations</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Drawing -->
+      <div class="row align-items-center flex-md-row-reverse mb-5">
+        <div class="col-md-6">
+          <img src="assets/img/portfolio/clarifier-design/CAD/clarifier_drawing.png" class="img-fluid rounded shadow-sm mb-3" alt="Drawing Sheet">
+        </div>
+        <div class="col-md-6">
+          <h4>Manufacturing Drawing</h4>
+          <p>Detailed GA drawing was prepared for fabrication and inspection:</p>
+          <ul>
+            <li>Included BOM, welding specifications, and fit tolerances</li>
+            <li>Assembly split defined for site handling</li>
+            <li>Issued to vendor after design verification</li>
+          </ul>
+            <p class="text-muted small">*Note: Drawings are protected under NDA and not shown here.</p>
+        </div>
+      </div>
+
+      <!-- Conclusion -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <h4>Conclusion</h4>
+          <p>The clarifier bridge was structurally verified for load-bearing capacity and site compatibility. Following analysis and drawing release, it was fabricated and installed on-site with no reported issues during commissioning.</p>
+        </div>
+      </div>
+
+      <!-- Workflow Summary -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-10">
+          <div class="p-4 bg-light shadow-sm rounded text-center">
+            <h4 class="mb-3">Project Workflow Summary</h4>
+            <p class="mb-3">
+              This project followed a full-cycle design process: CAD modeling, structural simulation, and fabrication readiness. All load cases were verified through FEA and drawings were finalized based on plant feedback.
+            </p>
+            <p class="fw-semibold">
+              CAD in SolidWorks → Tank Layout Coordination → FEA in ANSYS → Stress & Deflection Validation → GA Drawing Release
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section light-background">
+    <div class="container text-center" data-aos="fade-up">
+        <h2 class="contact-title">Let's Connect!</h2>
+        <p class="contact-subtext">Feel free to reach out to me via Email or LinkedIn.</p>
+
+        <div class="contact-icons">
+          <a href="mailto:pooshanvraul42@gmail.com" class="contact-icon" target="_blank">
+              <i class="bi bi-envelope-fill"></i>
+          </a>
+          <!-- <a href="tel:+447538253625" class="contact-icon" target="_blank">
+              <i class="bi bi-telephone-fill"></i>-->
+          </a>
+          <a href="https://www.linkedin.com/in/pooshan-raul/" class="contact-icon" target="_blank">
+              <i class="bi bi-linkedin"></i>
+          </a>
+      </div>
+    </div>
+ </section>
+ <!-- /Contact Section -->
+
+</main>
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="copyright text-center">
+        <p class="footer-text">
+            <strong>© <span id="year"></span> Pooshan Raul | Engineering Beyond the Screen</strong>
+        </p>
+    </div>
+</div>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+  <!-- Protection Script -->
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('DOMContentLoaded', () => {
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach(img => {
+      img.setAttribute('draggable', false);
+      img.addEventListener('dragstart', e => e.preventDefault());
+    });
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mechanical Design Portfolio | Validation of a Novel Heat Pipe Concept</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+
+  <!-- Android and PWA -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <i class="bi bi-gear-wide"></i>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="title-wrapper text-center">
+        <h1>Modelling of Novel Heat Pipe Design using ANSYS Fluent</h1>
+        <p>This is validation of a Novel heat pipe concept for fusion relevant condition using ANSYS Fluent.</p>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+    <div class="container" data-aos="fade-up">
+
+    <!-- Intro -->
+    <div class="row mb-5">
+      <div class="col-lg-12">
+        <p class="fs-5">
+          This project investigates the thermal behavior of a molybdenum-lithium heat pipe under fusion-relevant heat loads using CFD. A reduced-order axisymmetric model was developed in ANSYS Fluent and benchmarked against COMSOL simulations from TU/e. The goal was to simulate evaporation condensation cycle and identify heat flux performance in a simplified domain.
+        </p>
+      </div>
+    </div>
+
+    <!-- Heat Pipe Overview -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/simple_hp.png" class="img-fluid rounded shadow-sm mb-3" alt="Heat Pipe Overview">
+      </div>
+      <div class="col-md-6">
+        <h4>Novel Heat Pipe</h4>
+        <p>The heat pipe is essentially made form 3D printed molybdenum and has internal capillaries lined with lithium. This structure is designed to sustain heat fluxes upto 20MW/m2, resembling to conditions in nuclear fusion.</p>
+        <ul>
+          <li>The pipe works on evaporation condensation cycle of liquid lithium</li>
+          <li>The pipe are vacuum sealed for preventing any oxidation</li>
+          <li>This heat pipe construction is capable of sustaining upto 2000°C</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Working Principle -->
+    <div class="row align-items-center flex-md-row-reverse mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/simple_hp_section.png" class="img-fluid rounded shadow-sm mb-3" alt="Capillary Detail">
+      </div>
+      <div class="col-md-6">
+        <h4>Working Principle</h4>
+        <p>Heat transfer occurs through lithium vaporization and condensation along the axial length of the pipe.</p>
+        <ul>
+          <li>Vaporization at hot end: ~1600 K peak under high heat flux</li>
+          <li>Condensation at the cooler region due to capillary action</li>
+          <li>No external pumping or active flow required</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Geometry Idealisation -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/axisymmetric_imprint.png" class="img-fluid rounded shadow-sm mb-3" alt="Axisymmetric Geometry">
+      </div>
+      <div class="col-md-6">
+        <h4>Problem Idealization</h4>
+        <p>The domain was simplified to 2D axissymmetric model to reduce element count and improve computational efficiency for this complex solution.</p>
+        <ul>
+          <li>Solid, liquid, and vapour zones defined explicitly</li>
+          <li>Mesh controls were applied to for generating conformal mesh</li>
+          <li>VOF model was used to represent liquid vapour interaction</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mesh Refinement -->
+    <div class="row align-items-center flex-md-row-reverse mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/mesh_refined.png" class="img-fluid rounded shadow-sm mb-3" alt="Mesh Refinement">
+      </div>
+      <div class="col-md-6">
+        <h4>Mesh Refinement & Quality</h4>
+        <p>Quadrilateral mesh was applied with sizing controls near steep gradients for better numerical stability.</p>
+        <ul>
+          <li>Refined evaporator zone with 0.4 mm spacing</li>
+          <li>Skewness ~0.32, orthogonality ~0.74</li>
+          <li>Reduced interpolation errors at wall interfaces</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mesh Metrics -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/mesh_metrics_1.png" class="img-fluid rounded shadow-sm mb-3" alt="Mesh Metrics 1">
+      </div>
+      <div class="col-md-6">
+        <h4>Mesh Metrics</h4>
+        <p>Mesh quality was evaluated using standard Fluent checks before solver initialization.</p>
+        <ul>
+          <li>Aspect ratio < 5 across entire domain</li>
+          <li>Gradient smoothing applied post-refinement</li>
+          <li>Zero negative volumes or element collapse</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mesh Convergence -->
+    <div class="row align-items-center flex-md-row-reverse mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/mesh_stats.png" class="img-fluid rounded shadow-sm mb-3" alt="Mesh Stats">
+      </div>
+      <div class="col-md-6">
+        <h4>Mesh Convergence Study</h4>
+        <p>Mesh convergence was achieved at ~38,000 elements with less than 2% deviation in peak temperature.</p>
+        <ul>
+          <li>Solver time reduced by ~15% vs baseline</li>
+          <li>Grid convergence index within acceptable tolerance</li>
+          <li>Final mesh used for all thermal post-processing</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Temperature Distribution -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/temp_zoom_1.png" class="img-fluid rounded shadow-sm mb-3" alt="Temperature Zoom 1">
+      </div>
+      <div class="col-md-6">
+        <h4>Temperature Results</h4>
+        <p>Peak surface temperatures (~1600 K) matched reference COMSOL data from TU Eindhoven.</p>
+        <ul>
+          <li>Localized peaks at evaporator edge and mid-wick</li>
+          <li>Stable axial drop toward condenser confirmed</li>
+          <li>Temperature tracking over 12.3 s of transient simulation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cross Validation -->
+    <div class="row align-items-center flex-md-row-reverse mb-5">
+      <div class="col-md-6">
+        <img src="assets/img/portfolio/heat-pipe/temp_zoom_2.png" class="img-fluid rounded shadow-sm mb-3" alt="Temperature Zoom 2">
+      </div>
+      <div class="col-md-6">
+        <h4>Cross-Validation</h4>
+        <p>Temperature field matched benchmark thermal data despite simplified phase boundaries.</p>
+        <ul>
+          <li>Minor deviation near liquid-vapor interface</li>
+          <li>Axial and radial distribution trends consistent</li>
+          <li>Validated without full VOF model implementation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="row mt-4">
+      <div class="col-12">
+        <h4>Conclusion</h4>
+        <p>This study validates reduced-order CFD modeling for fusion-grade heat pipe performance. Future work includes multiphase VOF refinement, UDF-based flux inputs, and electromagnetic coupling via MHD modules.</p>
+      </div>
+    </div>
+
+    <!-- Summary & CFD Workflow (moved near end) -->
+    <div class="row justify-content-center mb-5 mt-5">
+      <div class="col-lg-10">
+        <div class="p-4 bg-light shadow-sm rounded text-center">
+          <h4 class="mb-3">Project Summary & CFD Workflow</h4>
+          <p class="mb-0 fs-6">
+            A novel heat pipe geometry was simulated for use in fusion applications. Axisymmetric simplification reduced computational demand while retaining heat transfer accuracy. The Fluent model was validated against benchmark COMSOL results, demonstrating good thermal correlation despite phase simplification.
+            <br><br>
+            <strong>
+              SolidWorks Geometry → 2D Domain Setup → Mesh Quality Checks → Thermal Load Simulation → Fluent Post-Processing → COMSOL Cross-Validation
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Box -->
+    <div class="row mt-5">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="portfolio-info p-4 bg-light shadow-sm rounded">
+          <h3 class="text-center">Project Information</h3>
+          <ul class="list-unstyled">
+            <li><strong>Project Date:</strong> August 2024</li>
+            <li><strong>Software:</strong> ANSYS Fluent, SolidWorks</li>
+            <li><strong>Category:</strong> Research & Development</li>
+            <li><strong>Focus:</strong> Fusion Cooling, Thermal Simulation, Heat Pipe Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ </section>
+ <!-- /Portfolio Details Section -->
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+      <div class="container text-center" data-aos="fade-up">
+          <h2 class="contact-title">Let's Connect!</h2>
+          <p class="contact-subtext">Feel free to reach out to me via Email or LinkedIn.</p>
+  
+          <div class="contact-icons">
+            <a href="mailto:pooshanvraul42@gmail.com" class="contact-icon" target="_blank">
+                <i class="bi bi-envelope-fill"></i>
+            </a>
+            <!-- <a href="tel:+447538253625" class="contact-icon" target="_blank">
+                <i class="bi bi-telephone-fill"></i>-->
+            </a>
+            <a href="https://www.linkedin.com/in/pooshan-raul/" class="contact-icon" target="_blank">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+      </div>
+  </section>
+<!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+          <p class="footer-text">
+              <strong>© <span id="year"></span> Pooshan Raul | Engineering Beyond the Screen</strong>
+          </p>
+      </div>
+  </div>
+
+  <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Protection Script -->
+ <script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('DOMContentLoaded', () => {
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach(img => {
+      img.setAttribute('draggable', false);
+      img.addEventListener('dragstart', e => e.preventDefault());
+    });
+  });
+ </script>
+
+</body>
+
+</html>
