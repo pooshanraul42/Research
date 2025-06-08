@@ -66,8 +66,8 @@
     <!-- Page Title -->
 <div class="page-title">
   <div class="title-wrapper text-center">
-    <h1>Racing Go-Kart – Structural Design & Simulation</h1>
-    <p>Designed for national-level competitions, this project focuses on strength, safety, and performance of a race-ready go-kart chassis through FEA-based validation.</p>
+    <h1>Simulation-Driven Design of a Racing Go-Kart</h1>
+    <p>This project explores the structural behavior of a lightweight welded chassis under various loading conditions using ANSYS, with emphasis on experimental–computational correlation and validation for high-performance applications.</p>
   </div>
 </div><!-- End Page Title -->
 
@@ -79,7 +79,7 @@
     <div class="row mb-5">
       <div class="col-lg-12">
         <p class="fs-5">
-          Designed and validated a competitive go-kart chassis for national-level go-karting events. The goal was to create a safe, performance-oriented vehicle optimized for strength, weight, and manufacturability. SolidWorks was used for modeling and ANSYS for crash and modal simulations.
+          This research-focused project involved structural simulation and optimization of a tubular steel chassis for competitive karting applications. The objective was to evaluate performance under impact, torsional, and vibrational loading using FEA. CAD modeling was performed in SolidWorks, while impact and modal simulations were carried out in ANSYS Mechanical.
         </p>
       </div>
     </div>
@@ -92,7 +92,7 @@
       <div class="col-md-6">
         <h4>Final Assembly Render</h4>
         <p>
-          Complete CAD model including chassis, engine, steering, and body frame. Designed to meet rules and dynamic handling performance.
+          A complete go-kart assembly was created including chassis, powertrain, steering, and safety frame. The design was developed with a focus on manufacturing feasibility and real-world race conditions.
         </p>
         <ul>
           <li><strong>Engine:</strong> 124.6 cc | Max Speed: 80 km/h</li>
@@ -110,12 +110,12 @@
       <div class="col-md-6">
         <h4>Chassis CAD Model</h4>
         <p>
-          The chassis was modeled using AISI 4130 tubular steel for its high strength-to-weight ratio. The structure was optimized for rigidity and impact absorption.
+          The go-kart chassis was constructed using tubes of identical dimensions, but with two distinct grades of AISI 4130 steel. A higher-strength variant was used at structurally critical points — such as around the rear axle, engine mounts, and driver seat — where increased torsional stiffness was necessary to maintain performance integrity under race loads. In contrast, the lower-strength, more ductile variant was employed in curved members and exposed zones likely to absorb impact energy during collisions. This strategic material distribution allowed enhanced fatigue resistance and structural integrity without altering the geometric design.
         </p>
         <ul>
-          <li><strong>Tube Spec:</strong> 29.2 mm OD × 1.65 mm thick</li>
-          <li><strong>Material:</strong> AISI 4130 | Yield Strength: 768 MPa</li>
-          <li><strong>Focus:</strong> Safety-compliant and lightweight design</li>
+          <li><strong>Tube Spec:</strong> 29.2 mm OD × 1.65 mm wall</li>
+          <li><strong>Material:</strong>  Two grades of AISI 4130, stiffness and ductility-optimized</li>
+          <li><strong>Focus:</strong>  Torsional control, fatigue life, and energy absorption through material placement</li>
         </ul>
       </div>
     </div>
@@ -128,11 +128,11 @@
       <div class="col-md-6">
         <h4>Mesh Overview</h4>
         <p>
-          Tetrahedral meshing was applied with refinement at high-stress zones including welds and suspension nodes. Element quality checks ensured accurate results.
-        </p>
+          The mesh was developed using a hybrid strategy combining high-order tetrahedral (Tet10) and hexahedral (Solid186) elements. Tubular intersections and weld joints were carefully sliced and meshed with Tet10 elements to ensure geometric conformity and resolve complex junction stresses. The remaining cylindrical members were meshed using Hex elements to maximize element quality and maintain numerical stability. All interface regions were meshed conformally to ensure accurate stress transfer across members and reliable prediction of load-bearing behavior under simulated conditions.
         <ul>
-          <li><strong>Refinement:</strong> Engine + steering mount areas</li>
-          <li><strong>Validation:</strong> Mesh convergence confirmed</li>
+          <li><strong>Element Types:</strong> Tet10 (intersections), Solid186 Hex (tubes)</li>
+          <li><strong>Focus:</strong> High-quality mesh with conformal transitions for accurate structural response</li>
+          <li><strong>Outcome:</strong> Improved load path continuity and joint stress prediction</li>
         </ul>
       </div>
     </div>
@@ -145,7 +145,7 @@
       <div class="col-md-6">
         <h4>Front Impact Analysis</h4>
         <p>
-          A 4G deceleration load (5886 N) was applied to the front chassis. The design was reinforced post-analysis for improved safety.
+          A deceleration force equivalent to 4G (5886 N) was applied to simulate frontal collision. The structural response was analyzed to identify deformation patterns and stress concentration regions. Post-analysis, reinforcements were suggested to improve safety margins.
         </p>
         <ul>
           <li><strong>Max Stress:</strong> 301.56 MPa | FOS: 2.19</li>
@@ -162,7 +162,7 @@
       <div class="col-md-6">
         <h4>Rear Impact Analysis</h4>
         <p>
-          A rear-end collision at 2.5G (3678 N) was simulated. Frame stiffness was retained and bracing validated for engine protection.
+          A rear collision scenario was simulated under 2.5G (3678 N) loading. Frame integrity and rear-end stiffness were assessed, especially around the engine mount region, which is critical for crash energy absorption.
         </p>
         <ul>
           <li><strong>Max Stress:</strong> 245.4 MPa | FOS: 2.69</li>
@@ -179,7 +179,7 @@
       <div class="col-md-6">
         <h4>Torsional Rigidity</h4>
         <p>
-          Applied torque of 367.8 Nm to simulate cornering load. Deflection and twist were well within safe tolerances.
+         A torque of 367.8 Nm was applied to opposite corners of the chassis to replicate diagonal loading, representative of aggressive cornering. The simulation focused on evaluating twist resistance and identifying structural weak points.
         </p>
         <ul>
           <li><strong>Deformation:</strong> 6.13 mm</li>
@@ -196,11 +196,12 @@
       <div class="col-md-6">
         <h4>Modal Frequency Analysis</h4>
         <p>
-          Natural frequencies were analyzed to ensure separation from engine RPM (75Hz). Modes at 59Hz and 117Hz validated safe operation.
+         Modal analysis was conducted to identify potential resonant frequencies and prevent catastrophic failure due to vibrational excitation. Particular attention was paid to the frequencies near the engine’s operating range (~75 Hz). The first two mode shapes appeared at 59 Hz and 117 Hz, providing sufficient separation from the engine excitation frequency based on a ±10% resonance safety window. This ensured minimal risk of structural amplification. To further mitigate vibrational coupling, engine mounts were fitted with dampers to suppress dynamic responses in this critical frequency band.
         </p>
         <ul>
-          <li><strong>Primary Modes:</strong> 59 Hz and 117 Hz</li>
-          <li><strong>Safe Margin:</strong> No structural resonance</li>
+          <li><strong>Target Check:</strong> Avoid resonance within ±10% of 75 Hz</li>
+          <li><strong>Primary Modes:</strong> 59 Hz (torsional), 117 Hz (lateral flexure)</li>
+          <li><strong>Countermeasures:</strong> Dampers installed on engine mount points</li>
         </ul>
       </div>
     </div>
@@ -311,6 +312,7 @@
       <p class="mt-3 text-center mb-0 fs-6">
         <strong>Weight Distribution:</strong> 60% rear / 40% front, optimized for dynamic weight transfer.<br>
         Under braking, ~10% shifts forward improving stability. Under acceleration, rear bias improves traction.
+        <strong>Validation Summary:</strong> Structural response across loading scenarios demonstrated compliance with safety and stiffness targets. Stress, deformation, and FOS were evaluated to confirm chassis readiness for dynamic testing and real-world track conditions.
       </p>
     </div>
   </div>
@@ -322,12 +324,12 @@
     <div class="p-4 bg-light shadow-sm rounded text-center">
       <h4 class="mb-3">Project Summary & Engineering Workflow</h4>
       <p class="mb-0 fs-6">
-        This project focused on designing a structurally optimized go-kart chassis for competitive use. The design was validated against impact, torsional, and modal conditions using finite element analysis. Key priorities included driver safety, frame stiffness, and manufacturability using standard tubing and welding processes.
+        This study presents a finite element–validated design for a go-kart chassis, focusing on real-world loading cases such as impacts, torsion, and resonance. The iterative simulation process ensured all safety factors were above the minimum threshold. The design is ready for physical prototyping and experimental testing.
         <p class="fs-6 mt-3">
          The chassis frame was <strong>TIG welded</strong> and <strong>air-cooled post-fabrication</strong> to relieve internal stresses and maintain alignment at key load paths. This ensured both mechanical integrity and minimal distortion after welding.
         <br><br>
         <strong>
-          Concept Sketch → CAD Modeling in SolidWorks → Material Selection → FEA Setup in ANSYS → Impact & Modal Simulations → Design Iteration & Validation
+          Concept Sketch → CAD Modeling in SolidWorks → Material Selection → Mesh Optimization → Setup in ANSYS Mechanical → Impact & Modal Simulations → Design Iteration & Validation
         </strong>
         <br><br>
         The validated frame design met all safety and performance targets, with clear documentation of stress zones and structural limits under race-like conditions.
