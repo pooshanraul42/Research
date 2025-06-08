@@ -91,7 +91,7 @@
       </div>
       <div class="col-md-6">
         <h4>Novel Heat Pipe</h4>
-        <p>The heat pipe is essentially made form 3D printed molybdenum and has internal capillaries lined with lithium. This structure is designed to sustain heat fluxes upto 20MW/m2, resembling to conditions in nuclear fusion.</p>
+        <p>The heat pipe is essentially made form 3D printed molybdenum and has internal capillaries lined with lithium. This structure is designed to sustain heat fluxes upto 20MW/m2, resembling to conditions in tokamaks.</p>
         <ul>
           <li>The pipe works on evaporation condensation cycle of liquid lithium</li>
           <li>The pipe are vacuum sealed for preventing any oxidation</li>
@@ -107,11 +107,11 @@
       </div>
       <div class="col-md-6">
         <h4>Working Principle</h4>
-        <p>Heat transfer occurs through lithium vaporization and condensation along the axial length of the pipe.</p>
+        <p>Heat is absorbed at the evaporator region causing lithium to vaporize, and is transported to the condenser end where it recondenses via capillary action. This closed-loop mechanism drives thermal transfer without external flow assistance.</p>
         <ul>
           <li>Vaporization at hot end: ~1600 K peak under high heat flux</li>
-          <li>Condensation at the cooler region due to capillary action</li>
-          <li>No external pumping or active flow required</li>
+          <li>Passive capillary condensation mechanism</li>
+          <li>No mechanical pump or active components involved</li>
         </ul>
       </div>
     </div>
@@ -123,11 +123,11 @@
       </div>
       <div class="col-md-6">
         <h4>Problem Idealization</h4>
-        <p>The domain was simplified to 2D axissymmetric model to reduce element count and improve computational efficiency for this complex solution.</p>
+        <p>To reduce computational cost while preserving physical accuracy, the heat pipe was modeled as a 2D axisymmetric domain. The solid, liquid, and vapor regions were explicitly defined, and multiphase modeling was enabled using the VOF approach.</p>
         <ul>
-          <li>Solid, liquid, and vapour zones defined explicitly</li>
-          <li>Mesh controls were applied to for generating conformal mesh</li>
-          <li>VOF model was used to represent liquid vapour interaction</li>
+          <li>Axisymmetric geometry reduced element count</li>
+          <li>Multiphase zones defined explicitly for thermal interaction</li>
+          <li>VOF model applied to capture vapor–liquid interface dynamics</li>
         </ul>
       </div>
     </div>
@@ -139,11 +139,11 @@
       </div>
       <div class="col-md-6">
         <h4>Mesh Refinement & Quality</h4>
-        <p>Quadrilateral mesh was applied with sizing controls near steep gradients for better numerical stability.</p>
+        <p>High mesh quality was ensured to avoid solver instability and increase simulation reliability. Local refinement was applied near the evaporator region where gradients were highest.</p>
         <ul>
-          <li>Refined evaporator zone with 0.4 mm spacing</li>
+          <li>Quadrilateral meshing with 0.4 mm refinement near hot zones</li>
           <li>Skewness ~0.32, orthogonality ~0.74</li>
-          <li>Reduced interpolation errors at wall interfaces</li>
+          <li>No negative volumes or distorted elements observed</li>
         </ul>
       </div>
     </div>
@@ -155,11 +155,11 @@
       </div>
       <div class="col-md-6">
         <h4>Mesh Metrics</h4>
-        <p>Mesh quality was evaluated using standard Fluent checks before solver initialization.</p>
+        <p>Standard Fluent mesh metrics were evaluated and met convergence safety margins. The mesh was optimized using gradient smoothing and quality checks.</p>
         <ul>
-          <li>Aspect ratio < 5 across entire domain</li>
-          <li>Gradient smoothing applied post-refinement</li>
-          <li>Zero negative volumes or element collapse</li>
+          <li>Aspect ratio < 3 maintained throughout</li>
+          <li>Smoothing applied to eliminate stress risers/li>
+          <li>Clean topology enabled consistent solver initialization</li>
         </ul>
       </div>
     </div>
@@ -171,9 +171,9 @@
       </div>
       <div class="col-md-6">
         <h4>Mesh Convergence Study</h4>
-        <p>Mesh convergence was achieved at ~38,000 elements with less than 2% deviation in peak temperature.</p>
+        <p>A mesh size of 0.4 mm was selected, resulting in approximately 8,500 elements. This configuration provided an optimal balance between mesh quality and computational efficiency, with improved element skewness and acceptable solver runtime.</p>
         <ul>
-          <li>Solver time reduced by ~15% vs baseline</li>
+          <li>focussed on optimum balance between the simulation process and convergence.</li>
           <li>Grid convergence index within acceptable tolerance</li>
           <li>Final mesh used for all thermal post-processing</li>
         </ul>
@@ -216,7 +216,7 @@
     <div class="row mt-4">
       <div class="col-12">
         <h4>Conclusion</h4>
-        <p>This study validates reduced-order CFD modeling for fusion-grade heat pipe performance. Future work includes multiphase VOF refinement, UDF-based flux inputs, and electromagnetic coupling via MHD modules.</p>
+        <p>This study validates reduced-order CFD modeling for fusion-grade heat pipe performance. Future work includes multiphase VOF refinement, UDF-based flux inputs, increasing the accuracy of the fluid fluid interface and the solver robustness,  and electromagnetic coupling via MHD modules.</p>
       </div>
     </div>
 
@@ -229,7 +229,7 @@
             A novel heat pipe geometry was simulated for use in fusion applications. Axisymmetric simplification reduced computational demand while retaining heat transfer accuracy. The Fluent model was validated against benchmark COMSOL results, demonstrating good thermal correlation despite phase simplification.
             <br><br>
             <strong>
-              SolidWorks Geometry → 2D Domain Setup → Mesh Quality Checks → Thermal Load Simulation → Fluent Post-Processing → COMSOL Cross-Validation
+              SolidWorks Geometry → 2D Domain Setup → insering Temperature dependent materail properties → Mesh Quality Checks → Thermal Load Simulation → Fluent Post-Processing → COMSOL Cross-Validation
             </strong>
           </p>
         </div>
