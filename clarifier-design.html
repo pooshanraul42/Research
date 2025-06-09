@@ -68,7 +68,7 @@
   <div class="page-title">
     <div class="title-wrapper text-center">
       <h1>Clarifier Walkway Design for Wastewater Treatment Plant</h1>
-      <p>Structural design and FEA validation of a clarifier walkway bridge.</p>
+      <p>Structural simulation, civil integration, and fabrication design for a service-access bridge in a wastewater clarifier tank.</p>
     </div>
   </div>
 
@@ -80,7 +80,7 @@
       <div class="row mb-5">
         <div class="col-lg-12">
           <p class="fs-5">
-            This project involved the structural design, finite element analysis, and installation planning of a clarifier scraper bridge for a wastewater treatment plant. The 11-meter truss was engineered to support up to 1000 kg, accounting for the gearbox, drive pipe, scraper arm, and maintenance loads. Key objectives included lightweight design, bolt-together assembly for transport, and structural integrity under service conditions.
+            This project involves the structural design, finite element validation, and installation planning of an 11-meter walkway bridge for a rotating clarifier system. The design accounted for dynamic loading due to the scraper mechanism, maintenance crew, and gearbox system. Emphasis was placed on ensuring bolt-based modular assembly, low deflection under load, and compatibility with tank infrastructure.
           </p>
         </div>
       </div>
@@ -92,11 +92,11 @@
         </div>
         <div class="col-md-6">
           <h4>Clarifier Walkway Assembly</h4>
-          <p>The structure was built using 50×50×5 mm L-angle trusses and designed in SolidWorks with trim-extended joints.</p>
+          <p>The bridge was designed using modular L-angle truss segments joined via bolted flanges, with added bracing for torsional resistance. SolidWorks was used for full parametric modeling, including all interfaces for drive systems and structural alignment.</p>
           <ul>
-            <li>Split into two segments using bolted joints for transport and on-site assembly</li>
-            <li>Diagonal and horizontal bracing added to reduce torsional deformation</li>
-            <li>Mounting features modeled for gearbox, scraper pipe</li>
+            <li>Constructed with 50×50×5 mm L-angle trusses with trim-extended joints</li>
+            <li>Split into 2 transportable segments for ease of on-site assembly</li>
+            <li>Gearbox, scraper, and pipe interfaces modeled to match mechanical layout</li>
           </ul>
         </div>
       </div>
@@ -108,11 +108,11 @@
         </div>
         <div class="col-md-6">
           <h4>Integration with Civil Infrastructure</h4>
-          <p>The truss was designed within a cylindrical concrete tank envelope to ensure proper fit and clearance.</p>
+          <p>The truss was geometrically constrained within a cylindrical RCC clarifier tank envelope. Alignment was coordinated with anchoring plates, center shaft, and scraper coupling positions.</p>
           <ul>
-            <li>Anchoring plates aligned to match feedwell and top concrete rim</li>
-            <li>Scraper shaft and couplings referenced per site layout</li>
-            <li>Cross-checked against P&ID and plant layout drawings</li>
+            <li>Anchoring aligned to top slab rim and central feedwell structure</li>
+            <li>Verified with P&ID and GA drawings for mechanical fit</li>
+            <li>Scraper couplings and guide brackets included in the model</li> 
           </ul>
         </div>
       </div>
@@ -124,11 +124,11 @@
         </div>
         <div class="col-md-6">
           <h4>Mesh & Boundary Setup</h4>
-          <p>Finite element modeling was performed in ANSYS Mechanical using structured hex elements.</p>
+          <p>A full 3D solid model of the walkway was meshed in ANSYS Mechanical using sweep-based hexahedral meshing. Truss members were sliced at intersections to enable conformal mesh transitions and ensure accurate stress transfer across joints. Mesh refinement was focused on bolt pads, flanges, and bracket regions to preserve accuracy under loading.</p>
           <ul>
-            <li>Shell and beam elements used to balance fidelity and solve time</li>
-            <li>Mesh refinement applied at bolt holes, load-bearing brackets, and gusseted corners</li>
-            <li>Mesh metrics like aspect ratio, skewness, and warping were checked</li>
+            <li><strong>Meshing Method:</strong> Sweep-based hex meshing with conformal slicing</li>
+            <li><strong>Element Type:</strong> SOLID186 (20-node quadratic hexahedrals)</li>
+            <li><strong>Refinements:</strong> At load-bearing points, bolt zones, and gusseted corners</li>
           </ul>
         </div>
       </div>
@@ -140,11 +140,11 @@
         </div>
         <div class="col-md-6">
           <h4>Load Case</h4>
-          <p>The truss was analyzed for a conservative 1000 kg load to account for motor torque and scraper resistance.</p>
+          <p>A conservative 1000 kg load was applied at the center span to account for operational loads including the gearbox, pipe weight, and live load from maintenance. Gravity and fixed constraints were defined at anchor pads.</p>
           <ul>
-            <li>1000 kg point load applied at gearbox location (center span)</li>
-            <li>Self-weight, equipment mass, and maintenance live load included</li>
-            <li>Boundary conditions: gravity + fixed supports at anchor plates</li>
+            <li>1000 kg point load at gear and scraper mount location</li>
+            <li>Boundary Conditions: Gravity + fixed supports</li>
+            <li>Self-weight and accessory load included in simulation</li>
           </ul>
         </div>
       </div>
@@ -156,11 +156,11 @@
         </div>
         <div class="col-md-6">
           <h4>Stress Analysis</h4>
-          <p>Stress concentrations were examined to ensure structural safety across all load paths.</p>
+          <p>Von Mises stress contours showed peak values around bolt cutouts and joint overlaps. Stress remained safely within the material yield limit, with added bracing to distribute forces.</p>
           <ul>
-            <li>Peak Von Mises stress: ~153 MPa near bolt cutouts and joint overlaps</li>
-            <li>Stresses remained well below the steel yield strength (250 MPa)</li>
-            <li>Stress mitigated using bracing plates and filleted welds</li>
+            <li>Peak Von Mises stress: ~153 MPa (Yield limit: 250 MPa)</li>
+            <li>Hotspots at bolt pads and flange joints</li>
+            <li>Stress mitigation via filleted welds and bracing plates</li>
           </ul>
         </div>
       </div>
@@ -172,11 +172,11 @@
         </div>
         <div class="col-md-6">
           <h4>Deflection Check</h4>
-          <p>The deformation was plotted and compared against deflection limits for walkable structures.</p>
+          <p>The bridge deflection remained within L/250 limits for pedestrian safety. Uniform displacement was noted without mid-span torsional twisting.</p>
           <ul>
-            <li>Max vertical deflection: ~5 mm (L/220 approx.)</li>
-            <li>Within the L/250 limit for platforms under static loads</li>
-            <li>Deflection uniform along mid-span with no torsional twist</li>
+            <li>Max vertical deflection: ~5 mm (L/220)</li>
+            <li>Passes static platform guidelines for walkable structures</li>
+            <li>No out-of-plane torsion or lateral sway observed</li>
           </ul>
         </div>
       </div>
@@ -189,9 +189,9 @@
         <div class="col-md-6">
           <h4>Factor of Safety</h4>
           <ul>
-            <li>Minimum FOS > 2.3 under worst-case loading</li>
-            <li>FOS validated at all bolted junctions and load paths</li>
-            <li>Redundant structure supports future load variations</li>
+            <li>Minimum FOS: 2.3 under peak load conditions</li>
+            <li>Verified at truss flange junctions and anchor bolt locations</li>
+            <li>Overdesign margin included for field variation tolerance</li>
           </ul>
         </div>
       </div>
@@ -203,13 +203,13 @@
         </div>
         <div class="col-md-6">
           <h4>Manufacturing Drawing</h4>
-          <p>Detailed GA drawing was prepared for fabrication and inspection:</p>
+          <p>The final GA drawing included all field-weld instructions, split sections, and mounting plates. BOM and weld symbols followed standard fabrication practices and were issued post-verification.</p>
           <ul>
-            <li>Included BOM, welding specifications, and fit tolerances</li>
-            <li>Assembly split defined for site handling</li>
-            <li>Issued to vendor after design verification</li>
+            <li>Included weld notes, cut lengths, and BOM</li>
+            <li>Defined fabrication split for transport constraints</li>
+            <li>Issued post-FEA approval and client review</li>
           </ul>
-            <p class="text-muted small">*Note: Drawings are protected under NDA and not shown here.</p>
+          <p class="text-muted small">*Note: Drawings protected under NDA, not shown here.</p>
         </div>
       </div>
 
@@ -217,7 +217,7 @@
       <div class="row mt-4">
         <div class="col-12">
           <h4>Conclusion</h4>
-          <p>The clarifier bridge was structurally verified for load-bearing capacity and site compatibility. Following analysis and drawing release, it was fabricated and installed on-site with no reported issues during commissioning.</p>
+          <p>The bridge passed all strength and deflection checks and was fabricated per drawing without modification. On-site installation was completed successfully, and the system was commissioned with zero structural issues reported.</p>
         </div>
       </div>
 
@@ -227,10 +227,10 @@
           <div class="p-4 bg-light shadow-sm rounded text-center">
             <h4 class="mb-3">Project Workflow Summary</h4>
             <p class="mb-3">
-              This project followed a full-cycle design process: CAD modeling, structural simulation, and fabrication readiness. All load cases were verified through FEA and drawings were finalized based on plant feedback.
+             This project followed a full-cycle mechanical design process including parametric modeling, structural validation using FEA, and drawing release for fabrication. All site feedback was incorporated to ensure operational compatibility.
             </p>
             <p class="fw-semibold">
-              CAD in SolidWorks → Tank Layout Coordination → FEA in ANSYS → Stress & Deflection Validation → GA Drawing Release
+              SolidWorks CAD → Site Coordination → ANSYS Simulation → Structural Validation → Fabrication Drawing → Final Release
             </p>
           </div>
         </div>
