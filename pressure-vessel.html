@@ -79,7 +79,7 @@
       <div class="row mb-5">
         <div class="col-lg-12">
           <p class="fs-5">
-            This project investigates the stress behavior and code compliance of a 500L carbon steel pressure vessel under internal pressure and thermal loads. Using ASME Section VIII Div. 2 methodology, linearized FEA was performed in ANSYS Mechanical to validate design integrity under nozzle loading, thermal expansion, and hydrostatic effects.
+            This project investigates the stress behavior and code compliance of a 500L carbon steel pressure vessel under internal pressure and thermal loads. Using design by analysis methodology given in ASME Section VIII Div. 2, FEA was performed in ANSYS Mechanical to validate design integrity under nozzle loading, thermal expansion, and hydrostatic effects.
           </p>
         </div>
       </div>
@@ -92,7 +92,7 @@
         <div class="col-md-6">
           <h4>3D CAD Model</h4>
           <p>
-            The vessel was modeled in SolidWorks with a cylindrical shell, torispherical dish ends, and six nozzle connections. Geometric simplifications such as fillets and chamfers were excluded to ensure a mesh-friendly model for FEA.
+            The vessel was modeled in SolidWorks with a cylindrical shell, torispherical dish ends, and six nozzle connections. Geometric simplifications such as small faces anbd inexact edges were excluded to ensure a mesh-friendly model for FEA.
           </p>
           <ul>
             <li><strong>Volume:</strong> 500L | <strong>Thickness:</strong> 6 mm</li>
@@ -110,12 +110,12 @@
         <div class="col-md-6">
           <h4>Mesh Strategy</h4>
           <p>
-            A multizone mesh with sweep method was applied to sweepable bodies. Mesh refinement was provided near nozzle junctions with at least two elements across thickness for accuracy.
+           A multizone sweep mesh was applied using high-order SOLID186 elements to capture thermal and pressure-induced stress gradients. Local sizing controls ensured at least two elements through shell thickness in nozzle junctions and knuckle regions. Quality metrics such as Jacobian ratio and orthogonality were verified for solution accuracy.
           </p>
           <ul>
             <li><strong>Element Type:</strong> SOLID186 (Quadratic, 20-node)</li>
             <li><strong>Control:</strong> Local edge sizing & method controls</li>
-            <li><strong>Validation:</strong> Skewness, aspect ratio, and Jacobian</li>
+            <li><strong>Validation:</strong> Skewness, aspect ratio, warping factor, and Jacobian</li>
           </ul>
         </div>
       </div>
@@ -128,12 +128,12 @@
         <div class="col-md-6">
           <h4>Loading & Boundary Conditions</h4>
           <p>
-            Internal pressure of 0.2942 MPa was applied along with self-weight and nozzle loads as per WRC guidelines. Nozzle ends were constrained with radial and bending moments.
+           The vessel was subjected to 0.2942 MPa internal pressure, nozzle thrusts, and self-weight, with boundary conditions derived from WRC 2002 guidelines. Nozzle ends were constrained using realistic moment-bearing supports to simulate service-level stress paths at intersections.
           </p>
           <ul>
-            <li><strong>Supports:</strong> Fixed base and flanges</li>
-            <li><strong>Loads:</strong> Pressure, nozzle thrusts, gravity</li>
-            <li><strong>Moments:</strong> Applied on cylindrical and spherical shells</li>
+            <li><strong>Supports:</strong> Fixed base</li>
+            <li><strong>Loads:</strong> Internal pressure, nozzle thrusts, gravity</li>
+            <li><strong>Nozzle Moments:</strong> Applied on cylindrical and torispherical zones</li>
           </ul>
         </div>
       </div>
@@ -146,11 +146,11 @@
         <div class="col-md-6">
           <h4>Stress Results</h4>
           <p>
-            Von Mises stress was highest at the nozzle-shell intersections. Stress values were below yield limits for SA-516 Gr.70 and showed safe margins for pressure containment.
+           Von Mises stress concentration was observed at the nozzle-shell interface and around leg supports. All computed stress values remained within ASME allowable limits for SA-516 Gr.70 material, confirming pressure containment capacity with margin.
           </p>
           <ul>
             <li><strong>Max Stress:</strong> 159.85 MPa</li>
-            <li><strong>Material Allowable:</strong> 235.5 MPa (1.5 × Sm)</li>
+            <li><strong>Material Allowable stress:</strong> 235.5 MPa (1.5 × Sm)</li>
           </ul>
         </div>
       </div>
@@ -163,7 +163,7 @@
         <div class="col-md-6">
           <h4>Total Deformation</h4>
           <p>
-            Deformation primarily occurred at unsupported nozzles and dish crown. Maximum deflection recorded was under 1.2 mm, verifying structural rigidity.
+            Deformation was concentrated at unsupported shell nozzle. The peak deflection of 1.14 mm occurred within the elastic limit, demonstrating structural rigidity and service acceptability under combined loads. For additional safety, support strips were welded to the nozzle during manufacturing. 
           </p>
           <ul>
             <li><strong>Peak Deflection:</strong> 1.14 mm</li>
@@ -181,7 +181,7 @@
         <div class="col-md-6">
           <h4>Stress Linearization</h4>
           <p>
-            A classification line was plotted across shell thickness at the nozzle intersection. Membrane and bending stress components were extracted and compared against allowable limits as per ASME Div. 2 Appendix 5.
+           A linearized stress profile was extracted along a classification line plottled across shell and nozzle thicknes at the nozzle interface, isolating membrane and bending components per ASME BPVC Section VIII, Div. 2 Chapter 5. The peak linearized stress (Pl + Pb) was significantly below the code-defined allowable threshold, passing compliance with margin.
           </p>
           <ul>
             <li><strong>Max Linearized Stress (Pl + Pb):</strong> 119.74 MPa</li>
@@ -197,15 +197,14 @@
     <div class="p-4 bg-light shadow-sm rounded text-center">
       <h4 class="mb-3">Project Summary & Analysis Workflow</h4>
       <p class="mb-0 fs-6">
-        As part of my bachelor's thesis, I modeled and analyzed a pressure vessel subject to internal pressure, temperature, and nozzle loading. The vessel was validated as per ASME Section VIII Division 2 using linearized stress components and comparison against allowable stress criteria.
-        <p class="fs-6 mt-3">
+        This project demonstrates a full FEA validation workflow for a code-compliant pressure vessel design. Loads included internal pressure, thermal expansion, and nozzle thrusts. Service behavior was verified using WRC-based assumptions and membrane-bending stress separation. Simulation integrity was maintained via mesh convergence and Appendix 5 stress classification.
         External nozzle loadings were interpreted using a <strong>WRC bulletin (2002 edition)</strong>, accounting for axial, bending, and torsional components. These inputs enabled a realistic simulation of service-level stress behavior at nozzle-shell junctions.
         <br><br>
         <strong>
           CAD Modeling in SolidWorks → Geometry Cleanup → Import to ANSYS Workbench → Mesh Refinement → Load Application → Stress Linearization → ASME Code Validation → Experimental Hydrotesting
         </strong>
         <br><br>
-        <strong>Material Validation:</strong> Properties were selected from ASME Section II, Part D, with yield strength values at temperature referenced from Table Y-1. Allowable stress limits were determined per Annex 3-A, ensuring conformance with plastic collapse criteria under Division 2 rules.
+        <strong>Material Validation:</strong> Properties were selected from ASME Section II, Part D, with yield strength values at design temperature referenced from Table Y-1. Allowable stress limits were determined per Annex 3-A, ensuring conformance with plastic collapse criteria under Division 2 rules.
         <br><br>
         This approach confirmed structural feasibility and demonstrated proficiency in both pressure vessel design standards and simulation workflow.
       </p>
