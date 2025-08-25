@@ -1717,20 +1717,3 @@ section,
 .bi-gear-wide {
   color: #0048A2 !important; /* Navy Blue */
 }
-/* Default: keep short sentences left or centered as template defines */
-p {
-  text-align: inherit; /* fallback to whatever the parent says (center, left, etc.) */
-}
-
-/* Apply justification only for longer paragraphs inside main content sections */
-.section p,
-.about p,
-.hero p.lead,
-.portfolio p,
-.services p,
-.contact p {
-  text-align: justify;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px; /* keeps lines at a nice readable width */
-}
