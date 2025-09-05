@@ -205,9 +205,9 @@
         <h4>Cross-Validation</h4>
         <p>Temperature field matched benchmark thermal data despite simplified phase boundaries.</p>
         <ul>
-          <li>Minor deviation near liquid-vapor interface</li>
-          <li>Axial and radial distribution trends consistent</li>
-          <li>Validated with full VOF model implementation</li>
+          <li>Early-transient agreement up to 12.3 s before solver divergence.</li>
+          <li>Temperature trends consistent with COMSOL baseline, even in 2D axisymmetric model.</li>
+          <li>Minor deviation near the liquid–vapor interface due to mesh/time-step sensitivity.</li>
         </ul>
       </div>
     </div>
@@ -216,9 +216,21 @@
     <div class="row mt-4">
       <div class="col-12">
         <h4>Conclusion</h4>
-        <p>This study validates reduced-order CFD modeling for fusion-grade heat pipe performance. Future work includes multiphase VOF refinement, UDF-based flux inputs, increasing the accuracy of the fluid fluid interface and the solver robustness,  and electromagnetic coupling via MHD modules.</p>
+        <p>This study validates a reduced-order CFD approach for fusion-grade heat pipe behaviour. Results were consistent with benchmark data during the stable transient window, demonstrating that a 2D axisymmetric model can provide reliable thermal trends with reduced computational cost. Future work will focus on stabilising full VOF runs through finer interface resolution, tighter Courant control, and incorporating complex physics such as wick porosity, UDF-based heat flux magnitude, and phase-change source terms.</p>
       </div>
     </div>
+
+    <!-- Future Scope -->
+    <div class="row mt-4">
+      <div class="col-12">
+        <h4>Future Work</h4>
+        <ul class="mb-0">
+       <li>Extend simulation runtime by improving interface stability (smaller time steps, tighter Courant number, refined mesh near interface).</li>
+       <li>Introduce wick porosity models and UDF-based source terms for heat flux and phase-change.</li>
+       <li>Use validated 2D axisymmetric setup as a computationally efficient baseline before scaling to full 3D with enhanced physics.</li>
+      </div>
+    </div>
+
 
     <!-- Summary & CFD Workflow (moved near end) -->
     <div class="row justify-content-center mb-5 mt-5">
