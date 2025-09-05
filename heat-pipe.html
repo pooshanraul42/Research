@@ -78,8 +78,8 @@
     <!-- Intro -->
     <div class="row mb-5">
       <div class="col-lg-12">
-        <p class="fs-5">
-          This project explores the thermal performance of a molybdenum-lithium heat pipe under fusion-relevant conditions. A reduced-order 2D axisymmetric CFD model was developed in ANSYS Fluent and validated against benchmark results from COMSOL (TU/e). The goal was to simulate lithium phase-change cycles and assess thermal gradient distribution in a simplified geometric domain.
+        <p class="lead" style="max-width: 900px; margin: 0 auto;">
+           Modelled a lithium–molybdenum heat pipe in ANSYS Fluent using a Volume of Fluid setup for evaporation and condensation. A 2D axisymmetric domain was used to reduce cost while retaining key thermal behaviour, and results were cross-checked against a COMSOL baseline from TU/e with close agreement in temperature and heat-flux trends. This shows the ability to combine multiphase CFD with reference data for fusion-relevant thermal management research.
         </p>
       </div>
     </div>
@@ -158,7 +158,7 @@
         <p>Standard Fluent mesh metrics were evaluated and met convergence safety margins. The mesh was optimized using gradient smoothing and quality checks.</p>
         <ul>
           <li>Aspect ratio < 3 maintained throughout</li>
-          <li>Smoothing applied to eliminate stress risers/li>
+          <li>Smoothing applied to eliminate stress risers</li>
           <li>Clean topology enabled consistent solver initialization</li>
         </ul>
       </div>
